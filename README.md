@@ -9,16 +9,16 @@ where there value of the Nth line is the offset for reading the line in the geno
 
 Once the index for the genome matrix file has been created, the following script can be used to process the genome matrix:
   1. 1a_GetRegions.py: extracts regions from the the genome matrix file into a single file where each region is seperated by a header line beginning with ">"
-     *The regions file is a three column file with the following format: [seq]\t[start]\t[stop]\n
-     *The name of each region in the header line will be [seq]_[start]_[stop]
+     * The regions file is a three column file with the following format: [seq]\t[start]\t[stop]\n
+     * The name of each region in the header line will be [seq]_[start]_[stop]
   2. 1b_GetRegionFASTA.py: extracts the base sequeces of region from the genome matrix and write the sequences of each region into a seperate multi-FASTA file
-     *Uses the same regions file format as above
-     *Outfile files have the following format [region_file].[seq]_[start]_[stop].fasta
-     *Sequences within each fasta are named sequencetial, beginning with "0" as the referrence sequence
+     * Uses the same regions file format as above
+     * Outfile files have the following format [region_file].[seq]_[start]_[stop].fasta
+     * Sequences within each fasta are named sequencetial, beginning with "0" as the referrence sequence
   3. 1c_GetRegionStats.py: calculates stats (Nt Diversity and Tajima's D) for the sequences in a defined region
-     *Uses the same regions file format as above
-     *Outfiles have the following format: [Region]\t[NtDiversity]\t[TajimasD]\n
-     *If there are no differential sites in a region, "NoDiffSites" will in that cell instead of a float value
+     * Uses the same regions file format as above
+     * Outfiles have the following format: [Region]\t[NtDiversity]\t[TajimasD]\n
+     * If there are no differential sites in a region, "NoDiffSites" will in that cell instead of a float value
   4. 1d_GetRegionStats_fromBED.py: preforms the same function as 1c_GetRegionStats.py but uses a standard BED format file instead of a regions file
-      *BED format file should be in the following format: [Seq]\t[Start]\t[Stop]\t[SeqName]\n. All four values will be used to name regions
-      *Output format is the same as 1c_GetRegionStats.py
+      * BED format file should be in the following format: [Seq]\t[Start]\t[Stop]\t[SeqName]\n. All four values will be used to name regions
+      * Output format is the same as 1c_GetRegionStats.py
